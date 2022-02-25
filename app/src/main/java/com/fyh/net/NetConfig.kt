@@ -75,18 +75,7 @@ object NetConfig {
     /** 对话框构建工厂 */
     var dialogFactory: NetDialogFactory = NetDialogFactory
 
-    /** 对话框, 已废弃, 请使用[dialogFactory] */
-    @Deprecated("废弃", replaceWith = ReplaceWith("NetConfig.dialogFactory"), DeprecationLevel.ERROR)
-    var onDialog: (FragmentActivity) -> Dialog = { activity ->
-        val progress = ProgressDialog(activity)
-        progress.setMessage(activity.getString(R.string.net_dialog_msg))
-        progress
-    }
 
-    /** 全局错误处理器, 已废弃, 请使用[errorHandler] */
-    @Deprecated("使用NetErrorHandler统一处理错误", replaceWith = ReplaceWith("NetConfig.errorHandler"), DeprecationLevel.ERROR)
-    var onError: Throwable.() -> Unit = onError@{
-    }
 
 
     /** 网络请求自动处理缺省页时发生错误的处理逻辑 */
